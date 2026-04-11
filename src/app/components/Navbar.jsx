@@ -7,6 +7,7 @@ const Navbar = () => {
     <li><Link href="/contact/support">Support</Link></li>
     <li><Link href="/about/developers">Developers</Link></li>
     <li><Link href="/about/designers">Designers</Link></li>
+    <li><Link href="/blogs">Blog</Link></li>
     </>
     return (
         <div>
