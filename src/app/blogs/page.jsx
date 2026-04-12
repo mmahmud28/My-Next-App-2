@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const BlogsPage = () => {
@@ -44,11 +45,11 @@ const BlogsPage = () => {
             <h2 className="text-4">Blogs</h2>
             <div className='grid grid-cols-2 gap-4'>
                 {
-                    blogs.map(blog => <div className='card w-96 bg-base-100 shadow-xl' key={blog.id}>
-                        <h3>{blog.title}</h3>
+                    blogs.map(blog => <div className='card p-5 space-y-4 w-96 bg-base-100 shadow-xl' key={blog.id}>
+                        <h3 className='text-green-500'>{blog.title}</h3>
                         <p>By {blog.author} on {blog.date} in {blog.category}</p>
-                        <img src={blog.image} alt={blog.title} className="w-64 h-40 object-cover" />
                         <p>{blog.description}</p>
+                        <Link href={`/blogs/${blog.id}`} className='btn btn-primary'>Read More</Link>
                     </div>)
                 }
             </div>
