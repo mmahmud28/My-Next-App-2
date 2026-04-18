@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import Link from "next/link";
 
 const UsersPage = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -6,7 +6,6 @@ const UsersPage = async () => {
 
     return (
         <div>
-            <h2>User Comming Hear</h2>
             <div className="flex flex-wrap gap-4 mt-4">
                 {
                     users.map(user => (
@@ -17,7 +16,9 @@ const UsersPage = async () => {
                                 <p className='text-xl font-semibold'>{user.phone}</p>
                                 <p className='text-xl font-semibold'>{user.website}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn">Buy Now</button>
+                                    <Link href={`/users/${user.id}`} className="btn">
+                                        See Details
+                                    </Link>
                                 </div>
                             </div>
                         </div>
