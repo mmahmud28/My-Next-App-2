@@ -49,6 +49,7 @@ const BlogDetailPage = async ({params}) => {
             {
                 blog && <div>
                     <h2 className='text-4xl'>{blog.title}</h2>
+                    <p className="text-xl">{blog.author}</p>
                 </div>
             }
         </div>
